@@ -4,7 +4,7 @@ import request from '../helpers/request';
 
 export const StoreContext = createContext(null);
 
-const StoreProvider = ({ childern }) => {
+const StoreProvider = ({ children }) => {
 	const [courses, setCourses] = useState([]);
 	const [user, setUser] = useState(null);
 
@@ -19,13 +19,13 @@ const StoreProvider = ({ childern }) => {
 	}, []);
 
 	return (
-		<StoreContext.Provider value={
+		<StoreContext.Provider value={{
 			courses,
 			setCourses,
 			user,
 			setUser
-		}>
-			{childern}
+		}}>
+			{children}
 		</StoreContext.Provider>
 	);
 };
